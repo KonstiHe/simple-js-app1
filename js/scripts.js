@@ -3,11 +3,12 @@ let pokemonList=[
   {name: "Venusaur", height: "2", types:["grass","poison"]},
   {name: "Charizard", height:"1.7", types:["fire","flying"]}];
 
-let text="<ul>";
-for (let i=0; i<pokemonList.length; i++){
-  if (pokemonList[i].height>"6") {
-    document.write( text+"<li>"+pokemonList[i].name+" (height:"+pokemonList[i].height+")- Wow. That is big!");
+  function myLoop(pokemon){
+  if (pokemon.height>"6"){
+    document.write( "<p>"+pokemon.name+" (height:"+pokemon.height+")- Wow. That is big! </p>")
   } else {
-    document.write(text+"<li>"+pokemonList[i].name+" (height:"+pokemonList[i].height+")");
+    document.write("<p>"+pokemon.name+" (height:"+pokemon.height+") </p>");
   }
-  }
+};
+
+pokemonList.forEach(myLoop);
